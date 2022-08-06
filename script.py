@@ -12,7 +12,7 @@ with open("USN.txt","r") as f:
         lines = (line.strip() for line in text.splitlines())
         chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
         text = '\n'.join(chunk for chunk in chunks if chunk)
-        count,usn,sgpa,l=0,"","",[]
+        count,usn,sgpa=0,"",""
         for i in text:
             if count==9 and i!='\n' : usn+=i
             if count==83 : sgpa+=i
