@@ -14,9 +14,9 @@ with open("USN.txt","r") as f:
         text = '\n'.join(chunk for chunk in chunks if chunk)
         count,usn,sgpa,l=0,"","",[]
         for i in text:
-            if(count==9 and i!='\n'):usn+=i
-            if(count==83):sgpa+=i
-            if(i=='\n'):count+=1
+            if count==9 and i!='\n' : usn+=i
+            if count==83 : sgpa+=i
+            if i=='\n' :count+=1
         try:sheet[usn]=float(sgpa)
         except: print(usn)
         with open('data.csv', 'w') as data:
