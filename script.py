@@ -17,6 +17,7 @@ with open("USN.txt","r") as f:
             if count==9 and i!='\n' : usn+=i
             if count==83 : sgpa+=i
             if i=='\n' :count+=1
+            if count > 83 : break
         try:sheet[usn]=float(sgpa)
         except: print(usn)
         with open('data.csv', 'w') as data:
