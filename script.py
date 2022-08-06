@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import csv
 with open("USN.txt","r") as f:
     sheet = {}
-    for line in f:
-        striped = line.strip()
+    for u in f:
+        striped = u.strip()
         url = "http://14.99.184.178:8080/birt/output?__report=mydsi/exam/Exam_Result_Sheet_dsce.rptdesign&USN="+striped+"&&__format=html&__pageoverflow=0&__overwrite=false"
         html = urlopen(url).read()
         soup = BeautifulSoup(html, features="html.parser")  
