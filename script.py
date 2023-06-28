@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-
+import time
 with open("ECE.txt","r") as f:
     sheet = []
     for u in f:
@@ -16,5 +16,5 @@ with open("ECE.txt","r") as f:
             USN,GPA,name= text[9],text[-5],text[7]
             sheet.append({USN,name,GPA})
         except: print(USN)
-        with open('data.csv', 'w') as data:
+        with open('data.csv', 'a') as data:
             data.write(USN+","+name+","+GPA+"\n")
